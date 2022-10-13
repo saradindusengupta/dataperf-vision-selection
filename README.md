@@ -1,6 +1,6 @@
 # `dataperf-vision-selection`: A Data-Centric Visual Benchmark for Training Data Selection
 
-### **Current version:** alpha
+### **Current version:** beta
 
 This github repo serves as the starting point for offline evaluation of submissions for the training data selection visual benchmark. The offline evaluation can be run on both your local environment as well as a containerized image for reproducibility of score results.
 
@@ -135,9 +135,9 @@ mlcube run --task=evaluate -Pdocker.build_strategy=always
 mlcube run --task=download,evaluate -Pdocker.build_strategy=always
 ```
 
-# Guidelines (alpha version)
+# Guidelines (beta version)
 
-For the alpha version of this benchmark we will only support submissions and offline evaluation for the open division.
+For the beta version of this benchmark we will support offline and online evaluation for the open division.
 
 ## Open Division: Creating a submission
 
@@ -164,7 +164,7 @@ ImageID,Confidence
 ...
 ```
 
-## Open Division: Offline evaluation of a submission
+## Open Division: Offline evaluation
 
 The configuration for the offline evaluation is specified in `task_setup.yaml` file. For simplicity, the repo comes pre-configured such that for offline evaluation you can simply:
 
@@ -247,6 +247,11 @@ python3 main.py --setup_yaml_path 'path/to/your/custom_task_setup.yaml'
 ```
 
 *Note: when specifying a data folder, ensure all relative paths in the task setup .yaml file are valid*
+
+## Open Division: Online evaluation
+
+To submit your final submission, we will utilize Dynabench as our online evaluation system. Please submit to the the [Vision Dataperf task](https://dynabench.org/tasks/vision-dataperf)
+
 
 ## Closed Division: Creating a submission
 
